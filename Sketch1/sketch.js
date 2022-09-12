@@ -1,6 +1,6 @@
 // variables
 let points = [];
-let noiseScale = 0.1;
+let noiseScale = 0.08;
 let zValue = 0;
 let edge = 50;
 let numPoints;
@@ -29,13 +29,13 @@ function draw() {
       let colorValue = color(map(getPixelValue(i, j), 0, 717, 0, 100) + rNoise(i,j), 50, 50);
 */
 
-      if (getPixelValue(i,j) < 100 && parseInt(getPixelValue(i,j) + rNoise(i,j)) % 5 == 0) {
+      if (getPixelValue(i,j) < 100 + (sin(zValue) * 25) && parseInt(getPixelValue(i,j) + rNoise(i,j)) % 5 == 0) {
         fill(shapeColor);
         noStroke();
         circle(i, j, 1);
       }
 
-      if (getPixelValue(i,j) > 100 && parseInt(getPixelValue(i,j) + rNoise(i,j)) % 3 == 0) {
+      if (getPixelValue(i,j) > 100 + (sin(zValue) * 25) && parseInt(getPixelValue(i,j) + rNoise(i,j)) % 3 == 0) {
         fill("#003049");
         noStroke();
         circle(i, j, 0.5);
@@ -43,12 +43,12 @@ function draw() {
 
     }
   }
-  save("frame.jpg");
+  //save("frame.jpg");
   /* points.forEach(p => {
     p.draw();
   }); */
   zValue += 0.05;
-  frameRate(0);
+  frameRate(10);
 }
 
 class Point {
