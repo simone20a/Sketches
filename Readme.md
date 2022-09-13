@@ -1,3 +1,3 @@
 # Sketches
 ### Sketch1
-![Sketch1](./Sketch1/sampleSketch1.jpg)
+<img src="./sketch1/sampleSketch1.jpg" width="50%" height="auto" alt="sketch1">
