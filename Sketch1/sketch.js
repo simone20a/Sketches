@@ -43,12 +43,12 @@ function draw() {
 
     }
   }
-  //save("frame.jpg");
+  save("sampleSketch1.jpg");
   /* points.forEach(p => {
     p.draw();
   }); */
   zValue += 0.05;
-  frameRate(10);
+  frameRate(0);
 }
 
 class Point {
